@@ -1,0 +1,316 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Container with 3-column Layout */
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 250px;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Sidebar Navigation */
+.sidebar-left {
+    background-color: #f8f9fa;
+    padding: 30px 20px;
+    border-right: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo svg {
+    transition: transform 0.3s ease;
+}
+
+.logo svg:hover {
+    transform: scale(1.1);
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-bottom: 15px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #555;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: #e3f2fd;
+    color: #0078D4;
+}
+
+.nav-link.active {
+    background-color: #0078D4;
+    color: white;
+}
+
+/* Main Content Area */
+.main-content {
+    padding: 40px 50px;
+    overflow-y: auto;
+}
+
+.page-header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #0078D4;
+    padding-bottom: 20px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #0078D4;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Sections */
+.section {
+    animation: fadeIn 0.5s ease;
+}
+
+.section.hidden {
+    display: none;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Blog Posts */
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.blog-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.blog-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: #0078D4;
+}
+
+.blog-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0078D4;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.post-excerpt {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.read-more {
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #005a9e;
+    transform: translateX(5px);
+}
+
+.read-more:active {
+    transform: scale(0.98);
+}
+
+/* Right Sidebar Archives */
+.sidebar-right {
+    background-color: #f8f9fa;
+    padding: 30px 20px;
+    border-left: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.archive-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #0078D4;
+    padding-bottom: 10px;
+}
+
+.archive-list {
+    list-style: none;
+}
+
+.archive-list li {
+    margin-bottom: 12px;
+}
+
+.archive-link {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #555;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.archive-link:hover {
+    background-color: #e3f2fd;
+    color: #0078D4;
+    padding-left: 16px;
+}
+
+.archive-link.active {
+    background-color: #0078D4;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 180px 1fr 200px;
+    }
+    
+    .main-content {
+        padding: 30px 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-left,
+    .sidebar-right {
+        position: static;
+        height: auto;
+        border: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .sidebar-left {
+        padding: 20px;
+    }
+    
+    .nav-menu ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .nav-menu li {
+        margin-bottom: 0;
+    }
+    
+    .logo {
+        margin-bottom: 20px;
+    }
+    
+    .main-content {
+        padding: 25px 20px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Scrollbar Styling */
+.sidebar-right::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar-right::-webkit-scrollbar-track,
+.main-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar-right::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.sidebar-right::-webkit-scrollbar-thumb:hover,
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

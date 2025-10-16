@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar-left">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" fill="#0078D4"/>
+                    <path d="M20 8L28 16H12L20 8Z" fill="white"/>
+                    <rect x="14" y="16" width="12" height="12" fill="white"/>
+                </svg>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#archives" class="nav-link">Archives</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Welcome to My Blog</h1>
+                <p class="subtitle">Thoughts, stories and ideas</p>
+            </header>
+
+            <section id="home" class="section">
+                <h2>Recent Posts</h2>
+                <div class="blog-posts">
+                    <article class="blog-card">
+                        <h3>Getting Started with Web Development</h3>
+                        <p class="post-date">October 15, 2025</p>
+                        <p class="post-excerpt">Learn the basics of HTML, CSS, and JavaScript to start building amazing websites.</p>
+                        <button class="read-more">Read More</button>
+                    </article>
+
+                    <article class="blog-card">
+                        <h3>Understanding Modern CSS Layouts</h3>
+                        <p class="post-date">October 10, 2025</p>
+                        <p class="post-excerpt">Explore Flexbox and Grid to create responsive and flexible layouts with ease.</p>
+                        <button class="read-more">Read More</button>
+                    </article>
+
+                    <article class="blog-card">
+                        <h3>JavaScript Best Practices</h3>
+                        <p class="post-date">October 5, 2025</p>
+                        <p class="post-excerpt">Improve your JavaScript code with these essential best practices and patterns.</p>
+                        <button class="read-more">Read More</button>
+                    </article>
+
+                    <article class="blog-card">
+                        <h3>Building Responsive Websites</h3>
+                        <p class="post-date">September 28, 2025</p>
+                        <p class="post-excerpt">Master the art of creating websites that work beautifully on any device.</p>
+                        <button class="read-more">Read More</button>
+                    </article>
+
+                    <article class="blog-card">
+                        <h3>Introduction to Version Control with Git</h3>
+                        <p class="post-date">September 20, 2025</p>
+                        <p class="post-excerpt">Learn how to manage your code effectively using Git and GitHub.</p>
+                        <button class="read-more">Read More</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="about" class="section hidden">
+                <h2>About</h2>
+                <p>Welcome to my blog! This is a space where I share my thoughts, experiences, and learnings about web development, programming, and technology.</p>
+                <p>I'm passionate about creating clean, efficient, and user-friendly web applications. Through this blog, I hope to help others on their journey to becoming better developers.</p>
+            </section>
+
+            <section id="archives" class="section hidden">
+                <h2>Archives</h2>
+                <p>Browse through all posts organized by date. Click on any month in the sidebar to see posts from that period.</p>
+            </section>
+        </main>
+
+        <!-- Right Sidebar Archives -->
+        <aside class="sidebar-right">
+            <div class="archive-section">
+                <h3>Archives</h3>
+                <ul class="archive-list">
+                    <li><a href="#" class="archive-link" data-month="2025-10">October 2025</a></li>
+                    <li><a href="#" class="archive-link" data-month="2025-09">September 2025</a></li>
+                    <li><a href="#" class="archive-link" data-month="2025-08">August 2025</a></li>
+                    <li><a href="#" class="archive-link" data-month="2025-07">July 2025</a></li>
+                    <li><a href="#" class="archive-link" data-month="2025-06">June 2025</a></li>
+                    <li><a href="#" class="archive-link" data-month="2025-05">May 2025</a></li>
+                    <li><a href="#" class="archive-link" data-month="2025-04">April 2025</a></li>
+                    <li><a href="#" class="archive-link" data-month="2025-03">March 2025</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
