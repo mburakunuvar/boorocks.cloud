@@ -1,0 +1,139 @@
+/* Article-specific styles */
+.article-header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #0078D4;
+    padding-bottom: 20px;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    color: #0078D4;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.article-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 4px solid #0078D4;
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.article-content ul {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.article-content li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.article-content code {
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: #d63384;
+}
+
+.article-content pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* Table of Contents Styles */
+.toc-section {
+    position: sticky;
+    top: 30px;
+}
+
+.toc-header {
+    font-size: 2rem;
+    color: #999;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.toc-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.toc-list {
+    list-style: none;
+}
+
+.toc-list > li {
+    margin-bottom: 15px;
+}
+
+.toc-link {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.toc-link:hover {
+    color: #0078D4;
+    padding-left: 5px;
+}
+
+.toc-link.active {
+    color: #0078D4;
+    font-weight: 600;
+}
+
+/* Nested TOC items */
+.toc-list .toc-nested {
+    margin-left: 20px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.toc-nested li {
+    margin-bottom: 10px;
+}
+
+.toc-nested .toc-link {
+    font-size: 0.85rem;
+    color: #666;
+}

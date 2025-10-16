@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting Namecheap Domain To GitHub Pages - Cloud Notes by Burak</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar-left">
+            <!-- Logo and Intro Section -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/vibecoding.jpg" alt="Logo">
+                </div>
+                <h2 class="sidebar-title">Cloud Notes by Burak</h2>
+                <p class="sidebar-description">Learnt by blood, tears; <br/>
+                       Written by vibe coding 🙂 </p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html#backtobasics" class="nav-link active">Back to Basics</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../index.html#archives" class="nav-link">Archives</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <article class="article-header">
+                <h1>Connecting Namecheap Domain To GitHub Pages</h1>
+                <p class="article-meta">October 16, 2025</p>
+            </article>
+
+            <div class="article-content">
+                <h2 id="introduction">Introduction</h2>
+                <p>Connecting your Namecheap domain to GitHub Pages is one of quickest ways to give your project custom web address instead of the default GitHub Pages URL.
+                    This guide provides step-by-step process and screenshots to: </p>
+                    <ol>
+                        <li>Link your domain and Enable HTTPs on GitHub</li>
+                        <li>Configure DNS records on Namecheap</li> 
+                    </ol>
+                </ul>
+                <h2 id="prerequisites">Prerequisites</h2>
+                <p>Before we dive in, make sure you have:</p>
+                
+                <ul>
+                    <li>A static webpage hosted on <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site/">GitHub Pages</a></li>
+                    <li>Your domain being pointed to a DNS by Namecheap</li>
+                </ul>
+
+                <h2 id="vscode-setup">GitHub Pages Custom Domain setup </h2>
+                <p>Go to your GitHub repository settings, scroll down to the "GitHub Pages" section, and enter your custom domain name.</p>
+
+                <h3 id="chat-mode-locations">Understanding Chat Mode Locations</h3>
+                <p>Custom chat modes in VS Code can be stored in different locations depending on your needs. Understanding where to place your prompt files is crucial for effective organization and team collaboration.</p>
+
+                <h3 id="prompts-directory">Locating the Prompts Directory</h3>
+                <p>The prompts directory is where you'll store all your custom chat mode files. By default, VS Code looks for prompts in your user settings directory, but you can also create workspace-specific prompts for project-based customization.</p>
+
+                <h2 id="first-custom-mode">Creating Your First Custom Chat Mode</h2>
+                <p>Now that we have the basics covered, let's create your first custom chat mode. This process involves creating a prompt file with specific instructions that define how the AI should behave.</p>
+
+                <h3 id="step1">Step 1: Create the Prompt File</h3>
+                <p>Navigate to your prompts directory and create a new file with a descriptive name. The file should have a <code>.md</code> extension and contain clear, specific instructions for the AI.</p>
+
+                <h3 id="step2">Step 2: Advanced Customization</h3>
+                <p>Once you've created a basic custom chat mode, you can enhance it with advanced features like context awareness, specific coding patterns, and domain-specific knowledge.</p>
+
+                <h2 id="best-practices">Best Practices for Custom Chat Modes</h2>
+                <p>To get the most out of your custom chat modes, follow these best practices:</p>
+
+                <h3 id="specific">1. Be Specific and Detailed</h3>
+                <p>The more specific your instructions, the better the AI can assist you. Include details about coding standards, preferred patterns, and common scenarios.</p>
+
+                <h3 id="examples">2. Include Context Examples</h3>
+                <p>Providing examples helps the AI understand exactly what you're looking for. Include code snippets, expected outputs, and edge cases.</p>
+
+                <h3 id="structure">3. Define Response Structure</h3>
+                <p>Specify how you want responses formatted. This could include code comment styles, documentation formats, or explanation structures.</p>
+
+                <h3 id="version-control">4. Version Control Your Prompts</h3>
+                <p>Store your custom prompts in version control so your team can share and iterate on them together. This ensures consistency across your development team.</p>
+
+                <h2 id="practical-examples">Practical Examples</h2>
+                <p>Let's look at some practical examples of custom chat modes that can enhance your development workflow:</p>
+
+                <ul>
+                    <li><strong>Framework-Specific Assistant:</strong> Create a chat mode tailored to React, Vue, Angular, or any other framework you use regularly.</li>
+                    <li><strong>Code Review Assistant:</strong> Design a mode that focuses on code quality, security concerns, and best practices.</li>
+                    <li><strong>Documentation Generator:</strong> Build a chat mode that specializes in creating comprehensive documentation for your code.</li>
+                    <li><strong>Testing Assistant:</strong> Develop a mode that helps write unit tests, integration tests, and suggests edge cases.</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Custom chat modes are a powerful way to extend GitHub Copilot's capabilities and tailor it to your specific development needs. By following this guide, you can create specialized AI assistants that understand your project's context, follow your team's coding standards, and help you write better code faster.</p>
+
+                <p>Start experimenting with custom chat modes today and discover how they can transform your development workflow. As you become more comfortable with the basics, explore advanced techniques like combining multiple prompts, using variables, and integrating with your CI/CD pipeline.</p>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Table of Contents -->
+        <aside class="sidebar-right">
+            <div class="toc-section">
+                <div class="toc-header">#</div>
+                <h3 class="toc-title">TABLE OF CONTENTS</h3>
+                <ul class="toc-list">
+                    <li>
+                        <a href="#introduction" class="toc-link">1. Introduction</a>
+                    </li>
+                    <li>
+                        <a href="#prerequisites" class="toc-link">2. Prerequisites</a>
+                    </li>
+                    <li>
+                        <a href="#vscode-setup" class="toc-link">3. Visual Studio Code Setup</a>
+                        <ul class="toc-nested">
+                            <li><a href="#chat-mode-locations" class="toc-link">3.1. Understanding Chat Mode Locations</a></li>
+                            <li><a href="#prompts-directory" class="toc-link">3.2. Locating the Prompts Directory</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#first-custom-mode" class="toc-link">4. Creating Your First Custom Chat Mode</a>
+                        <ul class="toc-nested">
+                            <li><a href="#step1" class="toc-link">4.1. Step 1: Create the Prompt File</a></li>
+                            <li><a href="#step2" class="toc-link">4.2. Step 2: Advanced Customization</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#best-practices" class="toc-link">5. Best Practices for Custom Chat Modes</a>
+                        <ul class="toc-nested">
+                            <li><a href="#specific" class="toc-link">5.1. 1. Be Specific and Detailed</a></li>
+                            <li><a href="#examples" class="toc-link">5.2. 2. Include Context Examples</a></li>
+                            <li><a href="#structure" class="toc-link">5.3. 3. Define Response Structure</a></li>
+                            <li><a href="#version-control" class="toc-link">5.4. 4. Version Control Your Prompts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#practical-examples" class="toc-link">6. Practical Examples</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
