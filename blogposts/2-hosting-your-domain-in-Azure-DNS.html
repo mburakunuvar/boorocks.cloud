@@ -34,69 +34,59 @@
         <!-- Main Content Area -->
         <main class="main-content">
             <article class="article-header">
-                <h1>Connecting Namecheap Domain To GitHub Pages</h1>
+                <h1>Hosting your domain in Azure DNS</h1>
                 <p class="article-meta">October 16, 2025</p>
             </article>
 
             <div class="article-content">
                 <h2 id="introduction">Introduction</h2>
-                <p>Connecting your Namecheap domain to GitHub Pages is one of quickest ways to give your project custom web address instead of the default GitHub Pages URL.
-                    This guide provides step-by-step process and screenshots to: </p>
+                <p>In this guide, we will walk you through the process of hosting your domain in Azure DNS. This involves several key steps and screenshots</p>
                     <ol>
-                        <li>Link your domain and Enable HTTPs on GitHub</li>
-                        <li>Configure DNS records on Namecheap</li> 
+                        <li> Create a DNS Zone in Azure</li>
+                        <li> Update nameservers on your domain registrar Namecheap</li>
                     </ol>
                 </ul>
                 <h2 id="prerequisites">Prerequisites</h2>
                 <p>Before we dive in, make sure you have:</p>
                 
                 <ul>
-                    <li>A static webpage hosted on <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site/">GitHub Pages</a></li>
-                    <li>Your domain being pointed to a DNS by Namecheap</li>
+                    <li>A domain name owned by you </li>
+                    <li>An Azure Account and subscription <a href="https://azure.microsoft.com/en-us/free/">(Free Trial)</a></li>
                 </ul>
 
-                <h2 id="vscode-setup">GitHub Pages Custom Domain setup </h2>
-                <p>Go to your GitHub repository settings, scroll down to the "GitHub Pages" section, and enter your custom domain name.</p>
 
-                <h3 id="chat-mode-locations">Understanding Chat Mode Locations</h3>
-                <p>Custom chat modes in VS Code can be stored in different locations depending on your needs. Understanding where to place your prompt files is crucial for effective organization and team collaboration.</p>
+                <h2 id="first-custom-mode">Step by Step</h2>
+               <p>In the Azure Portal, navigate to "DNS Zones" and click on "Create DNS Zone". Fill in the necessary details such as the subscription, resource group, and the name of your DNS zone.</p>
 
-                <h3 id="prompts-directory">Locating the Prompts Directory</h3>
-                <p>The prompts directory is where you'll store all your custom chat mode files. By default, VS Code looks for prompts in your user settings directory, but you can also create workspace-specific prompts for project-based customization.</p>
+                <h3 id="step1">Step 1: Create the DNS Zone</h3>
+                <p>In the Azure Portal, navigate to "DNS Zones" and click on "Create DNS Zone". Fill in the necessary details such as the subscription, resource group, and the name of your DNS zone.</p>
 
-                <h2 id="first-custom-mode">Creating Your First Custom Chat Mode</h2>
-                <p>Now that we have the basics covered, let's create your first custom chat mode. This process involves creating a prompt file with specific instructions that define how the AI should behave.</p>
+                <div class="image-frame" style="border: 2px solid #ccc; padding: 10px; border-radius: 8px; display: inline-block;">
+                    <img src="../images/2a-AzureDNS.png" alt="Azure DNS Zone Creation" class="article-image" style="border: 1px solid #ddd;">
+                </div>  
 
-                <h3 id="step1">Step 1: Create the Prompt File</h3>
-                <p>Navigate to your prompts directory and create a new file with a descriptive name. The file should have a <code>.md</code> extension and contain clear, specific instructions for the AI.</p>
 
-                <h3 id="step2">Step 2: Advanced Customization</h3>
-                <p>Once you've created a basic custom chat mode, you can enhance it with advanced features like context awareness, specific coding patterns, and domain-specific knowledge.</p>
+                <h3 id="step2">Step 2: Go to Resources, DNS Management, Recordsets in order to get the list of NameServers </h3>
 
-                <h2 id="best-practices">Best Practices for Custom Chat Modes</h2>
-                <p>To get the most out of your custom chat modes, follow these best practices:</p>
+                 <div class="image-frame" style="border: 2px solid #ccc; padding: 10px; border-radius: 8px; display: inline-block;">
+                    <img src="../images/2b-NameServers.png" alt="Azure DNS Zone Creation" class="article-image" style="border: 1px solid #ddd;">
+                </div>  
 
-                <h3 id="specific">1. Be Specific and Detailed</h3>
-                <p>The more specific your instructions, the better the AI can assist you. Include details about coding standards, preferred patterns, and common scenarios.</p>
 
-                <h3 id="examples">2. Include Context Examples</h3>
-                <p>Providing examples helps the AI understand exactly what you're looking for. Include code snippets, expected outputs, and edge cases.</p>
+                <h3 id="step3">Step 3: Use these name servers for Custom DNS settings on your domain registrar (Namecheap  in this example) </h3>
 
-                <h3 id="structure">3. Define Response Structure</h3>
-                <p>Specify how you want responses formatted. This could include code comment styles, documentation formats, or explanation structures.</p>
+<div class="image-frame" style="border: 2px solid #ccc; padding: 10px; border-radius: 8px; display: inline-block;">
+    <img src="../images/2c-NCCustom.png" alt="Azure DNS Zone Creation" class="article-image" style="border: 1px solid #ddd; max-width: 800px; height: auto;">
+</div>
 
-                <h3 id="version-control">4. Version Control Your Prompts</h3>
-                <p>Store your custom prompts in version control so your team can share and iterate on them together. This ensures consistency across your development team.</p>
 
-                <h2 id="practical-examples">Practical Examples</h2>
-                <p>Let's look at some practical examples of custom chat modes that can enhance your development workflow:</p>
+                <h3 id="step4">Step 4: As optional use the GitHub Pages name servers in the recordsets of your DNS Zone</h3>
 
-                <ul>
-                    <li><strong>Framework-Specific Assistant:</strong> Create a chat mode tailored to React, Vue, Angular, or any other framework you use regularly.</li>
-                    <li><strong>Code Review Assistant:</strong> Design a mode that focuses on code quality, security concerns, and best practices.</li>
-                    <li><strong>Documentation Generator:</strong> Build a chat mode that specializes in creating comprehensive documentation for your code.</li>
-                    <li><strong>Testing Assistant:</strong> Develop a mode that helps write unit tests, integration tests, and suggests edge cases.</li>
-                </ul>
+                                 <div class="image-frame" style="border: 2px solid #ccc; padding: 10px; border-radius: 8px; display: inline-block;">
+                    <img src="../images/2d-GHPages.png" alt="Azure DNS Zone Creation" class="article-image" style="border: 1px solid #ddd;max-width: 800px; height: auto;">
+                </div>  
+
+
 
                 <h2>Conclusion</h2>
                 <p>Custom chat modes are a powerful way to extend GitHub Copilot's capabilities and tailor it to your specific development needs. By following this guide, you can create specialized AI assistants that understand your project's context, follow your team's coding standards, and help you write better code faster.</p>

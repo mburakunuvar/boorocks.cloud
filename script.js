@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle navigation clicks
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // If it's an external link (not starting with #), let it navigate normally
+            if (!href.startsWith('#')) {
+                return; // Let the browser handle the navigation
+            }
+            
             e.preventDefault();
             
             // Remove active class from all links
@@ -16,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             
             // Get target section
-            const targetId = this.getAttribute('href').substring(1);
+            const targetId = href.substring(1);
             
             // Hide all sections
             sections.forEach(section => {
