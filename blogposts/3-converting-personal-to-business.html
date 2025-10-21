@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting Namecheap Domain To GitHub Pages - Cloud Notes by Burak</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="article.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar-left">
+            <!-- Logo and Intro Section -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/vibecoding.jpg" alt="Logo">
+                </div>
+                <h2 class="sidebar-title">Cloud Notes by Burak</h2>
+                <p class="sidebar-description">Learnt by blood, tears; <br/>
+                       Written by vibe coding 🙂 </p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html#backtobasics" class="nav-link active">SimpleThingsThatMatter</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../index.html#archives" class="nav-link">Archives</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <article class="article-header">
+                <h1>Converting your Azure account name to a business account name</h1>
+                <p class="article-meta">October 17, 2025</p>
+            </article>
+
+            <div class="article-content">
+                <h2 id="introduction">Introduction</h2>
+                <p>When you sign up to Azure using a personal email (like @outlook.com, @gmail.com, @hotmail.com, etc.), it creates a personal (Microsoft Account) — not a business (work or school) account.</p>
+                <p>This is perfectly fine for learning, experimenting, and even small projects. However, certain enterprise features and services in Azure and Microsoft 365 require a business account. This guide will show you:</p>
+                <ol>
+                    <li>How to convert your personal account to a business account</li>
+                    <li>Key differences between personal and business accounts</li>
+                </ol>
+
+                <h2 id="steps-to-convert">Steps to Convert a personal to a Business Account</h2>
+
+                <ol>
+                    <li>Go to https://portal.azure.com and sign in with your personal email</li>
+
+                    <li>Go to Entra → Manage → Users → select your username
+
+
+
+                    </li>
+
+                                            
+                        <div class="image-frame">
+                            <img src="../images/3a-entrauser.png" alt="Entra ID user selection v2" class="article-image" style="max-width: 600px; height: auto;">
+                        </div>
+                    <li>Update the default principal name (it will be similar to yourname-azure@*****.onmicrosoft.com) and note it down. This will become your new business account email.
+                        <div class="image-frame">
+                            <img src="../images/3b-entrauserupdate.png" alt="Update principal name" class="article-image" style="max-width: 600px; height: auto;">
+                        </div>
+                    </li>
+                    <li>Sign out and close your browser. Sign back in with your new business account email. If the password is not accepted, you may need to reset it using the email address you used to sign up for Azure</li>
+                    <li>Go to https://myaccount.microsoft.com — If you see Organization info, Devices, Entra ID, etc. → it's a Work/School Account.</li>
+
+                </ol>
+
+                <h2 id="differences">Differences Between Personal and Business Account</h2>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Personal Account (Microsoft Account)</th>
+                            <th>Business/Work Account (Entra ID / Azure AD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Example Email</td>
+                            <td>you@outlook.com, you@gmail.com</td>
+                            <td>you@company.com (managed by your org's Entra ID)</td>
+                        </tr>
+                        <tr>
+                            <td>Identity System</td>
+                            <td>Managed by Microsoft Account (MSA) service</td>
+                            <td>Managed by Microsoft Entra ID (Azure AD)</td>
+                        </tr>
+                        <tr>
+                            <td>Azure Portal Access</td>
+                            <td>Yes, but only as an individual under a Pay-As-You-Go or free subscription</td>
+                            <td>Yes, within an organization tenant</td>
+                        </tr>
+                        <tr>
+                            <td>Environments (Power Platform, MCS, etc.)</td>
+                            <td>Limited or none — because they require an Entra ID tenant</td>
+                            <td>Fully supported</td>
+                        </tr>
+                        <tr>
+                            <td>Tenant Creation</td>
+                            <td>No tenant (just a personal identity)</td>
+                            <td>Creates/uses a full Entra tenant</td>
+                        </tr>
+                        <tr>
+                            <td>Copilot Studio, Fabric, M365 integrations</td>
+                            <td>❌ Not supported</td>
+                            <td>✅ Supported</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="toc-section">
+                <div class="toc-header">#</div>
+                <h3 class="toc-title">TABLE OF CONTENTS</h3>
+                <ul class="toc-list">
+                    <li><a href="#introduction" class="toc-link">1. Introduction</a></li>
+                    <li><a href="#steps-to-convert" class="toc-link">2. Steps to Convert a personal to a Business Account</a></li>
+                    <li><a href="#differences" class="toc-link">3. Differences Between Personal and Business Account</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>         

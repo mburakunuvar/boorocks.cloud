@@ -1,184 +1,105 @@
-// Navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+// Utility functions
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+const toggleClass = (el, cls, force) => el?.classList.toggle(cls, force);
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// Event delegation helper
+const delegate = (parent, selector, event, handler) => {
+  parent.addEventListener(event, e => {
+    const target = e.target.closest(selector);
+    if (target) handler.call(target, e);
+  });
+};
+
+// Navigation handler
+const handleNavigation = () => {
+  delegate(document, '.nav-link', 'click', function(e) {
+    const href = this.getAttribute('href');
+    if (!href?.startsWith('#')) return;
+
+    e.preventDefault();
+    $$('.nav-link').forEach(l => toggleClass(l, 'active', false));
+    toggleClass(this, 'active', true);
+
+    const targetId = href.slice(1);
+    $$('.section').forEach(s => toggleClass(s, 'hidden', s.id !== targetId));
+    scrollToTop();
+  });
+};
+
+// Archive filter handler
+const handleArchiveLinks = () => {
+  delegate(document, '.archive-link', 'click', function(e) {
+    e.preventDefault();
+    $$('.archive-link').forEach(l => toggleClass(l, 'active', false));
+    toggleClass(this, 'active', true);
+
+    const month = this.dataset.month;
+    const monthText = this.textContent;
+    console.log(`Filtering posts for: ${month}`);
     
-    // Handle navigation clicks
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // If it's an external link (not starting with #), let it navigate normally
-            if (!href.startsWith('#')) {
-                return; // Let the browser handle the navigation
-            }
-            
-            e.preventDefault();
-            
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Get target section
-            const targetId = href.substring(1);
-            
-            // Hide all sections
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show target section
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-            }
-            
-            // Scroll to top smoothly
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    // Filter logic here - could be expanded to actual filtering
+    $$('.blog-card').forEach(card => {
+      const dateText = $('.post-date', card)?.textContent;
+      // Add filtering based on dateText and month
     });
-    
-    // Handle "Read More" button clicks
-    const readMoreButtons = document.querySelectorAll('.read-more');
-    
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const blogCard = this.closest('.blog-card');
-            const title = blogCard.querySelector('h3').textContent;
-            
-            // You can implement full post view here
-            alert(`Opening: ${title}\n\nThis is where you would display the full blog post content.`);
-            
-            // In a real application, you might:
-            // - Navigate to a separate page
-            // - Load content dynamically
-            // - Show a modal with full content
-        });
-    });
-    
-    // Handle archive link clicks
-    const archiveLinks = document.querySelectorAll('.archive-link');
-    
-    archiveLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all archive links
-            archiveLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Get the selected month
-            const month = this.getAttribute('data-month');
-            const monthText = this.textContent;
-            
-            // Filter blog posts by date (in a real app, this would filter actual data)
-            alert(`Showing posts from: ${monthText}\n\nIn a real application, this would filter and display posts from ${month}.`);
-            
-            // You could implement actual filtering logic here
-            filterPostsByMonth(month);
-        });
-    });
-    
-    // Function to filter posts by month
-    function filterPostsByMonth(month) {
-        // This is a placeholder function
-        // In a real application, you would:
-        // 1. Parse the month parameter
-        // 2. Filter blog posts based on their dates
-        // 3. Update the display to show only matching posts
-        
-        console.log(`Filtering posts for: ${month}`);
-        
-        // Example: You could hide/show posts based on their dates
-        const blogCards = document.querySelectorAll('.blog-card');
-        blogCards.forEach(card => {
-            const dateText = card.querySelector('.post-date').textContent;
-            // Add your filtering logic here
-        });
+  });
+};
+
+// Smooth scroll for hash links
+const handleSmoothScroll = () => {
+  delegate(document, 'a[href^="#"]', 'click', function(e) {
+    const href = this.getAttribute('href');
+    if (href?.length > 1 && !this.classList.contains('archive-link')) {
+      const target = $(href);
+      if (target) scrollToTop();
     }
-    
-    // Add smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            // Only handle if it's just a hash (like #home, #about)
-            if (href && href.length > 1 && !this.classList.contains('archive-link')) {
-                const target = document.querySelector(href);
-                if (target) {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-    
-    // Add animation to blog cards on scroll (optional enhancement)
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '0';
-                entry.target.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    entry.target.style.transition = 'all 0.5s ease';
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, 100);
-                
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all blog cards
-    document.querySelectorAll('.blog-card').forEach(card => {
-        observer.observe(card);
-    });
-    
-    // Add keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        // Press '1' for Home, '2' for About, '3' for Archives
-        if (e.key === '1') {
-            navLinks[0].click();
-        } else if (e.key === '2') {
-            navLinks[1].click();
-        } else if (e.key === '3') {
-            navLinks[2].click();
-        }
-    });
-    
-    console.log('Blog initialized successfully!');
+  });
+};
+
+// Animate cards on scroll (Intersection Observer)
+const animateCards = () => {
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const { target } = entry;
+        Object.assign(target.style, { opacity: '0', transform: 'translateY(20px)' });
+        
+        setTimeout(() => {
+          Object.assign(target.style, {
+            transition: 'all 0.5s ease',
+            opacity: '1',
+            transform: 'translateY(0)'
+          });
+        }, 100);
+        
+        observer.unobserve(target);
+      }
+    }),
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+  );
+
+  $$('.blog-card').forEach(card => observer.observe(card));
+};
+
+// Keyboard shortcuts
+const handleKeyboardNav = () => {
+  const navLinks = $$('.nav-link');
+  const keyMap = { '1': 0, '2': 1, '3': 2 };
+  
+  document.addEventListener('keydown', e => {
+    const index = keyMap[e.key];
+    if (index !== undefined) navLinks[index]?.click();
+  });
+};
+
+// Initialize all features
+document.addEventListener('DOMContentLoaded', () => {
+  handleNavigation();
+  handleArchiveLinks();
+  handleSmoothScroll();
+  animateCards();
+  handleKeyboardNav();
+  console.log('Blog initialized ✨');
 });
-
-// Add dynamic date update (optional)
-function updateCurrentDate() {
-    const dateElements = document.querySelectorAll('.current-date');
-    const today = new Date();
-    const formattedDate = today.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-    
-    dateElements.forEach(element => {
-        element.textContent = formattedDate;
-    });
-}
-
-// Call on load
-updateCurrentDate();

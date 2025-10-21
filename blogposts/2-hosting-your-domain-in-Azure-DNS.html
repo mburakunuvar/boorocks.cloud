@@ -24,7 +24,7 @@
             <!-- Navigation Menu -->
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="../index.html#backtobasics" class="nav-link active">Back to Basics</a></li>
+                    <li><a href="../index.html#backtobasics" class="nav-link active">SimpleThingsThatMatter</a></li>
                     <li><a href="../index.html#about" class="nav-link">About</a></li>
                     <li><a href="../index.html#archives" class="nav-link">Archives</a></li>
                 </ul>
@@ -35,7 +35,7 @@
         <main class="main-content">
             <article class="article-header">
                 <h1>Hosting your domain in Azure DNS</h1>
-                <p class="article-meta">October 16, 2025</p>
+                <p class="article-meta">October 17, 2025</p>
             </article>
 
             <div class="article-content">
@@ -88,10 +88,22 @@
 
 
 
-                <h2>Conclusion</h2>
-                <p>Custom chat modes are a powerful way to extend GitHub Copilot's capabilities and tailor it to your specific development needs. By following this guide, you can create specialized AI assistants that understand your project's context, follow your team's coding standards, and help you write better code faster.</p>
-
-                <p>Start experimenting with custom chat modes today and discover how they can transform your development workflow. As you become more comfortable with the basics, explore advanced techniques like combining multiple prompts, using variables, and integrating with your CI/CD pipeline.</p>
+                <h2 id="references">References & Useful Links</h2>
+                
+                <table class="references-table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Microsoft Azure DNS Documentation</td>
+                            <td><a href="https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns" target="_blank" rel="noopener">Delegate a domain to Azure DNS</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
 
@@ -101,38 +113,18 @@
                 <div class="toc-header">#</div>
                 <h3 class="toc-title">TABLE OF CONTENTS</h3>
                 <ul class="toc-list">
+                    <li><a href="#introduction" class="toc-link">1. Introduction</a></li>
+                    <li><a href="#prerequisites" class="toc-link">2. Prerequisites</a></li>
                     <li>
-                        <a href="#introduction" class="toc-link">1. Introduction</a>
-                    </li>
-                    <li>
-                        <a href="#prerequisites" class="toc-link">2. Prerequisites</a>
-                    </li>
-                    <li>
-                        <a href="#vscode-setup" class="toc-link">3. Visual Studio Code Setup</a>
+                        <a href="#first-custom-mode" class="toc-link">3. Step by Step</a>
                         <ul class="toc-nested">
-                            <li><a href="#chat-mode-locations" class="toc-link">3.1. Understanding Chat Mode Locations</a></li>
-                            <li><a href="#prompts-directory" class="toc-link">3.2. Locating the Prompts Directory</a></li>
+                            <li><a href="#step1" class="toc-link">3.1. Create the DNS Zone</a></li>
+                            <li><a href="#step2" class="toc-link">3.2. Get the NameServers</a></li>
+                            <li><a href="#step3" class="toc-link">3.3. Update Custom DNS on Namecheap</a></li>
+                            <li><a href="#step4" class="toc-link">3.4. Optional - Add GitHub Pages Records</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#first-custom-mode" class="toc-link">4. Creating Your First Custom Chat Mode</a>
-                        <ul class="toc-nested">
-                            <li><a href="#step1" class="toc-link">4.1. Step 1: Create the Prompt File</a></li>
-                            <li><a href="#step2" class="toc-link">4.2. Step 2: Advanced Customization</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#best-practices" class="toc-link">5. Best Practices for Custom Chat Modes</a>
-                        <ul class="toc-nested">
-                            <li><a href="#specific" class="toc-link">5.1. 1. Be Specific and Detailed</a></li>
-                            <li><a href="#examples" class="toc-link">5.2. 2. Include Context Examples</a></li>
-                            <li><a href="#structure" class="toc-link">5.3. 3. Define Response Structure</a></li>
-                            <li><a href="#version-control" class="toc-link">5.4. 4. Version Control Your Prompts</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#practical-examples" class="toc-link">6. Practical Examples</a>
-                    </li>
+                    <li><a href="#references" class="toc-link">4. References & Useful Links</a></li>
                 </ul>
             </div>
         </aside>
